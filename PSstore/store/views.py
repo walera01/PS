@@ -29,6 +29,17 @@ class Login(LoginView):
     def get_success_url(self):
         return reverse_lazy('main')
 
+def test(request):
+    form = TestForm
+    model = TestModel()
+    if request.method == 'POST':
+        print(request.POST.get('name'))
+        print(request.POST.get('data'))
+        model.name = request.POST.get('name')
+        model.date = request.POST.get('data')
+        model.save()
+
+    return render(request, "store/test.html")
 
 def logout_use(request):
     logout(request)

@@ -7,3 +7,7 @@ class ProductModel(models.Model):
     prise_dayafter = models.FloatField()
     prise_week = models.FloatField()
     prise_monthe = models.FloatField()
+
+class TestModel(models.Model):
+    name = models.CharField(max_length=20)
+    date = models.DateTimeField()
